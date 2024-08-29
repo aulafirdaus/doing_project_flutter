@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             children: [
               const Text('Welcome !',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 33,
                   fontWeight: FontWeight.bold,
                 ),
                 ),
@@ -120,6 +120,13 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 3,),
+                  const Text('Sign in with another account', 
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey
+                      ),
+                ),
             ],
           ),
         ),
