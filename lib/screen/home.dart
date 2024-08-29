@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+
+// referensi UI nya dari link ini https://i.pinimg.com/originals/8b/5c/56/8b5c569ad48701761be0bf8757ccb243.png
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -47,29 +50,38 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15,),
-              Container(
+              SizedBox(
                 width: 300,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.blue, Colors.purple],
-                    begin: Alignment.bottomRight,
-                    end: Alignment.topLeft,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
                   ),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                  // border: Border.all(width: 3, color: Colors.black),
-                ),
-                child: ElevatedButton(
-                    onPressed: () => {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                  ),
-                    child: const Text('Login',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          ),
+                  child: ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                          return const LinearGradient(
+                            colors: [Colors.blue, Colors.purple],
+                            begin: Alignment.bottomRight,
+                            end: Alignment.topRight,
+                          ).createShader(bounds);
+                        },
+                    child: OutlinedButton(
+                      onPressed: () => {},
+                      style: OutlinedButton.styleFrom(
+                        shadowColor: Colors.transparent,
+                        side: const BorderSide(
+                          width: 2.0, // Ketebalan border
+                          color: Colors.white, // Agar border mengikuti gradient
                         ),
+                      ),
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white, // Agar warna teks mengikuti gradient
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
