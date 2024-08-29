@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 
 
@@ -83,6 +84,41 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(height: 25,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  for (var icon in [
+                    MdiIcons.twitter,
+                    MdiIcons.linkedin,
+                    MdiIcons.facebook,
+                    MdiIcons.google
+                  ]) // ini untuk membuat ikon supaya tidak membuat container secara berulang
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shape: const CircleBorder(),
+                      shadowColor: Colors.transparent,
+                      padding: const EdgeInsets.symmetric(horizontal: 10)
+                    ),
+                    child: Container(
+                          // margin: const EdgeInsets.symmetric(horizontal: 5), // Jarak antar ikon
+                          width: 35,
+                          height: 35,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: LinearGradient(
+                              colors: [Colors.blue, Colors.purple],
+                              begin: Alignment.bottomRight,
+                              end: Alignment.topLeft,
+                            ),
+                          ),
+                      child: Icon(icon, color: Colors.white)
+                      ),
+                  ),
+                ],
               ),
             ],
           ),
