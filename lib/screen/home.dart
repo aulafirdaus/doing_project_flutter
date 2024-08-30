@@ -30,8 +30,8 @@ class HomePage extends StatelessWidget {
                     decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Colors.purple, Colors.blue],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
                     ),
                   ),
                 ),
